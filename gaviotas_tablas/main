@@ -1,0 +1,12 @@
+from files import data_processing
+from files.execution import execute_daily_update, predict, execute_first
+
+from sqlalchemy import text
+import pandas as pd
+
+if __name__ == "__main__":
+    execute_first() #si no se ha ejecutado antes, inicializa las tablas
+    execute_daily_update() #actualiza las tablas con los nuevos eventos del día
+
+    print("Execution completed successfully.")
+
